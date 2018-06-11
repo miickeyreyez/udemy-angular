@@ -1,0 +1,32 @@
+<div class="row">
+
+    <div class="col">
+        
+        <h1>*ngIf</h1>
+        <hr/>
+
+        <div class="card text-white bg-primary mb-3" style="width:100%" *ngIf="mostrar">
+            <div class="card-body">
+                <h5 class="card-title">{{ frase.mensaje }}</h5>
+                <p class="card-text">{{ frase.submensaje }}</p>
+            </div>
+        </div>
+
+        <button class="btn btn-outline-primary btn-block" (click)="showHide()">
+            Mostrar/Ocultar
+        </button>
+
+    </div>
+
+    <div class="col">
+        
+        <h1>*ngFor</h1>
+        <hr/>
+
+        <ul class="list-group" *ngFor="let pais of paises; let i = index">
+            <li class="list-group-item">{{ i+1 }}.{{ pais }}</li>
+        </ul>
+
+    </div>
+
+</div>
