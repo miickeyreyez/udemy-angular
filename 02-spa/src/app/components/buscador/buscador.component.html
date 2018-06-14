@@ -1,0 +1,47 @@
+<h1>Termino de búsqueda: {{ termino }}</h1>
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existen resultados para {{ termino }} 
+    </div>
+  </div>
+</div>
+
+<div class="animated fadeIn fast" *ngFor="let heroe of heroes">
+  <h2>{{ heroe.nombre | uppercase }} <small>({{ heroe.aparicion | date:'y' }})</small></h2>
+
+  <hr/>
+
+
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <img [src]="heroe.img" class="img-fluid" alt="">
+      <br/>
+      <br/>
+
+      <a routerLink="/heroes" class="btn btn-outline-danger btn-block animated fadeIn fast">Regresar</a>
+
+    </div>
+
+    <div class="col-md-8">
+
+      <h3>{{ heroe.nombre }}</h3>
+
+      <hr/>
+
+      <p>{{ heroe.bio }}</p>
+
+      <div>
+
+        <img *ngIf="heroe.casa == 'Marvel'" class="img-logo" src="assets/images/A-64.png" alt="">
+
+        <img *ngIf="heroe.casa == 'DC'" class="img-logo" src="assets/images/dc.png" alt="">
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
