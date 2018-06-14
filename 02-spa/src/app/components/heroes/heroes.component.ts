@@ -20,6 +20,7 @@ export class HeroesComponent implements OnInit {
   }
 
   verHeroe(index:number) {
+    console.log(index)
     this._router.navigate(['heroe/',index]);
   }
 

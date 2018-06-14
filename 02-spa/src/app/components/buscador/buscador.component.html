@@ -7,11 +7,14 @@
   </div>
 </div>
 
-<div class="animated fadeIn fast" *ngFor="let heroe of heroes">
-  <h2>{{ heroe.nombre | uppercase }} <small>({{ heroe.aparicion | date:'y' }})</small></h2>
+<!--<div class="animated fadeIn fast" *ngFor="let heroe of heroes">-->
+<div class="animated fadeIn fast">
+  
+  <app-heroe-card [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes; let i = index"></app-heroe-card>
+  
+  <!--<h2>{{ heroe.nombre | uppercase }} <small>({{ heroe.aparicion | date:'y' }})</small></h2>
 
   <hr/>
-
 
   <div class="row">
 
@@ -43,5 +46,5 @@
 
     </div>
 
-  </div>
+  </div>-->
 </div>
