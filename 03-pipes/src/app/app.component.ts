@@ -24,4 +24,8 @@ export class AppComponent {
   promesa = new Promise( (resolve,reject) => {
     setTimeout( () => resolve('Async!'),3500 );
   })
+  fecha = new Date();
+  messi = 'Lionel Andres Messi Cuccitini'
+  video = 'c9ldnEgVqu8';
+  activar:boolean = true;
 }
