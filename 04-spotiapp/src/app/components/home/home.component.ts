@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SpotifyService } from '../../services/spotify.service';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,25 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
 
   paises: any[] = [];
+  nuevasCanciones: any[] = [];
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient, private spotify:SpotifyService) { 
+    
     this.http.get('https://restcountries.eu/rest/v2/all').subscribe(
       (response:any) => {
-        console.log(response);
+        //console.log(response);
         this.paises = response;
       }
     );
+
+    this.spotify.getNewReleases().subscribe(
+      (data: any) => {
+        //Sin el map. this.nuevasCanciones = data.albums.items;
+        this.nuevasCanciones = data;
+        console.log(this.nuevasCanciones)
+      }
+    );
+    
   }
 
   ngOnInit() {
