@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   paises: any[] = [];
   nuevasCanciones: any[] = [];
+  loading: boolean = true;
 
   constructor(private http:HttpClient, private spotify:SpotifyService) { 
     
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
       (data: any) => {
         //Sin el map. this.nuevasCanciones = data.albums.items;
         this.nuevasCanciones = data;
-        console.log(this.nuevasCanciones)
+        //console.log(this.nuevasCanciones)
+        this.loading = false;
       }
     );
     

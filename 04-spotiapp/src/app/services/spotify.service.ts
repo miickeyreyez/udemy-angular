@@ -11,7 +11,7 @@ export class SpotifyService {
 
   getQuery(query:string) {
     const url = `https://api.spotify.com/v1/${query}`;
-    const token = 'BQAfHInGwe6rDvoj34hNwf9Ijy_I4VRdHqOaAVhTAi5JC6b5v6xp68KWnpUHaLn5jK-0f58I6hYGUsDPYXs';
+    const token = 'BQAfdM8KTRQGa7WrSpEZWEvoxeCavk6ZbnquMvYleoJd_ekvgjurHUFc5XMd-2c3MmSYHa-_exrppIPhJas';
     const headers = new HttpHeaders({
       'Authorization':`Bearer ${token}`,
     });
