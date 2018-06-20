@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   paises: any[] = [];
   nuevasCanciones: any[] = [];
   loading: boolean = true;
+  error: boolean = false;
+  errorMensaje: string;
 
   constructor(private http:HttpClient, private spotify:SpotifyService) { 
     
@@ -28,8 +30,13 @@ export class HomeComponent implements OnInit {
         this.nuevasCanciones = data;
         //console.log(this.nuevasCanciones)
         this.loading = false;
-      }
-    );
+      } ,
+      (error) => {
+        console.log(error);
+        this.loading = false;
+        this.error = true;
+        this.errorMensaje = error.error.error.message;
+      });
     
   }
 
