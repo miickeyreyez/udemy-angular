@@ -18,3 +18,25 @@
     </button>
   </div>
 </div>
+
+<div class="row m-5">
+  <div class="col">
+    <table class="table">
+      <thead>
+        <th>Foto</th>
+        <th>Àlbum</th>
+        <th>Canción</th>
+        <th>Vista Previa</th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let track of tracks">
+          <td><img [src]="track.album.images | noimage" class="img-thumb"/></td>
+          <td>{{ track.album.name }}</td>
+          <td>{{ track.name }}</td>
+          <td><audio [src]="track.preview_url" controls></audio></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
