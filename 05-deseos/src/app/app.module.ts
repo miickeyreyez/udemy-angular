@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { pendientesComponent } from '../pages/pendientes/pendientes.component';
 import { TerminadoComponent } from '../pages/terminado/terminado.component';
+import { ListaDeseosService } from './services/lista-deseos.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TerminadoComponent } from '../pages/terminado/terminado.component';
   providers: [
     StatusBar,
     SplashScreen,
+    ListaDeseosService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
