@@ -14,6 +14,7 @@ import { pendientesComponent } from '../pages/pendientes/pendientes.component';
 import { TerminadoComponent } from '../pages/terminado/terminado.component';
 import { ListaDeseosService } from './services/lista-deseos.service';
 import { AgregarComponent } from '../pages/agregar/agregar.component';
+import { PlaceholderPipe } from './pipes/placeholder.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AgregarComponent } from '../pages/agregar/agregar.component';
     TabsPage,
     pendientesComponent,
     TerminadoComponent,
-    AgregarComponent
+    AgregarComponent,
+    PlaceholderPipe
   ],
   imports: [
     BrowserModule,
