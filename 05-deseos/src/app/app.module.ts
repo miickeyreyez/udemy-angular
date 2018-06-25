@@ -15,6 +15,7 @@ import { TerminadoComponent } from '../pages/terminado/terminado.component';
 import { ListaDeseosService } from './services/lista-deseos.service';
 import { AgregarComponent } from '../pages/agregar/agregar.component';
 import { PlaceholderPipe } from './pipes/placeholder.pipe';
+import { DetallesComponent } from '../pages/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PlaceholderPipe } from './pipes/placeholder.pipe';
     pendientesComponent,
     TerminadoComponent,
     AgregarComponent,
-    PlaceholderPipe
+    PlaceholderPipe,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { PlaceholderPipe } from './pipes/placeholder.pipe';
     TabsPage,
     pendientesComponent,
     TerminadoComponent,
-    AgregarComponent
+    AgregarComponent,
+    DetallesComponent
   ],
   providers: [
     StatusBar,
