@@ -17,8 +17,8 @@
 
       <ion-list>
         <ion-item *ngFor="let item of lista.listaItem | slice:0:2" (click)="verDetalle(lista,i)">
-          <ion-icon *ngIf="!completado" ios="ios-square-outline" md="md-square-outline"></ion-icon>
-          <ion-icon *ngIf="completado" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+          <ion-icon item-left *ngIf="!item.completado" ios="ios-square-outline" md="md-square-outline"></ion-icon>
+          <ion-icon item-left *ngIf="item.completado" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
           {{ item.nombre }}
         </ion-item>
 

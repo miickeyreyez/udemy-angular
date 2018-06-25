@@ -6,4 +6,25 @@
 
 <ion-content>
 
+        <ion-card>
+                <ion-card-header>
+                        <ion-label floating>Nombre de la lista</ion-label>
+                        <br/>
+                        <ion-input type="text" [(ngModel)]="lista.nombre"></ion-input>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-list>
+                      <ion-item *ngFor="let item of lista.listaItem" (click)="actualizar(item)">
+
+                            <ion-icon item-left *ngIf="!item.completado" ios="ios-square-outline" md="md-square-outline"></ion-icon>
+                            <ion-icon item-left *ngIf="item.completado" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+                        <h2 [class.tachado]="item.completado"> {{ item.nombre }} </h2>
+
+                      </ion-item>
+                  </ion-list>
+                </ion-card-content>
+              </ion-card>
+
+              <button (click)="borrarItem()" ion-button block color="danger">Borrar Lista</button>
+
 </ion-content>

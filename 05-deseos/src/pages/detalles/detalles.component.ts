@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Lista } from '../../app/clases';
+import { Lista, ListaItem } from '../../app/clases';
+import { ListaDeseosService } from '../../app/services/lista-deseos.service';
 
 @Component({
     selector:'app-detalles',
@@ -14,7 +15,8 @@ export class DetallesComponent implements OnInit {
 
     constructor(
         public navCtrl:NavController,
-        public navParams:NavParams
+        public navParams:NavParams,
+        public listaDeseos:ListaDeseosService
     ) {
         this.index = this.navParams.get("index");
         this.lista = this.navParams.get("lista");
@@ -22,5 +24,10 @@ export class DetallesComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    actualizar(item:ListaItem) {
+        item.completado = !item.completado;
+        this.listaDeseos.actualizarData();
     }
 }
