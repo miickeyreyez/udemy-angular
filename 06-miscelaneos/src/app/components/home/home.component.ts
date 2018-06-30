@@ -16,6 +16,7 @@ import { Component, OnInit } from '@angular/core';
   <P [appResaltado]="'orange'">Hola mundo</P>
 
   <app-ng-switch></app-ng-switch>
+
   `,
   styleUrls: ['./home.component.css']
 })
