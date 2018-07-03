@@ -47,6 +47,22 @@
     </div>
   </div>
 
+  <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8" formArrayName="pasatiempos">
+
+        <input *ngFor="let item of forma.controls['pasatiempos'].controls; let i = index" 
+              class="form-control"
+               type="text"
+               placeholder="Pasatiempo"
+               [formControlName]="i">
+      </div>
+      <button type="button" 
+      name="button" 
+      class="btn btn-outline-primary" 
+      (click)="agregarpasatiempo()">Nuevo</button>
+    </div>
+
   <div formGroupName="nombrecompleto">
 
       <div class="form-group row">
@@ -78,7 +94,7 @@
                  formControlName="apellido">
         </div>
       </div>
-  
+
     </div>
 
 
