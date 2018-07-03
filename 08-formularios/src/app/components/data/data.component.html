@@ -47,6 +47,39 @@
     </div>
   </div>
 
+  <div formGroupName="nombrecompleto">
+
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Nombre</label>
+        <div class="col-8">
+  
+          <input class="form-control"
+                 type="text"
+                 placeholder="Nombre"
+                 formControlName="nombre"
+                 [ngClass]="{'is-invalid':!forma.get('nombrecompleto.nombre').valid, 'is-valid':forma.get('nombrecompleto.nombre').valid}">
+                 <div class="invalid-feedback" *ngIf="forma.get('nombrecompleto.nombre').errors?.required">
+                    Este campo es requerido
+                  </div>
+                 <div class="invalid-feedback" *ngIf="forma.controls['nombrecompleto'].controls['nombre'].errors?.minlength">
+                    Valide la longitud, longitud mínima de {{ forma.get('nombrecompleto.nombre').errors.minlength.requiredLength }}
+                  </div>
+  
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Apellido</label>
+        <div class="col-8">
+  
+          <input class="form-control"
+                 type="text"
+                 placeholder="Apellido"
+                 formControlName="apellido">
+        </div>
+      </div>
+  
+    </div>
 
 
   <div class="form-group row">
