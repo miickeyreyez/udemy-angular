@@ -14,11 +14,16 @@ export class PeliculasService {
 
    }
 
-  getPouplares() {
+  getPopulares() {
     let url = `${this.urlMoviedb}/discover/movie?api_key=${this.apikey}&language=en-US&sort_by=popularity.desc`
-    return this.http.get(url)/*.pipe(map(res => {
+    return this.http.get(url)
+    /*.pipe(map(res => {
       console.log(res)
     }));*/
+  }
 
+  buscarPelicula(texto:string) {
+    let url = `${this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desclanguage=en-US&api_key=${this.apikey}`
+    return this.http.get(url)
   }
 }
