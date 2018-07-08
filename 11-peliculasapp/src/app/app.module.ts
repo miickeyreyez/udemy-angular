@@ -8,6 +8,9 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { PeliculaComponent } from './componentes/pelicula/pelicula.component';
 import { APP_ROUTING } from './app.routes';
 import { BuscarComponent } from './componentes/buscar/buscar.component';
+import { PeliculaimagePipe } from './pipes/peliculaimage.pipe';
+import { SliderComponent } from './componentes/home/slider/slider.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { BuscarComponent } from './componentes/buscar/buscar.component';
     HomeComponent,
     NavbarComponent,
     PeliculaComponent,
-    BuscarComponent
+    BuscarComponent,
+    PeliculaimagePipe,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

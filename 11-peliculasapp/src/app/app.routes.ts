@@ -7,8 +7,10 @@ import { BuscarComponent } from './componentes/buscar/buscar.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'peliculas', component: PeliculaComponent },
+    { path: 'pelicula/:id/:page', component: PeliculaComponent },
+    { path: 'pelicula/:id/:page/:busqueda', component: PeliculaComponent },
     { path: 'buscar', component: BuscarComponent },
+    { path: 'buscar/:texto', component: BuscarComponent },
     { path: '**', component: HomeComponent },
 
 ];
